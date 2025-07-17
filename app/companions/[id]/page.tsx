@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
@@ -11,11 +9,12 @@ import {
   Calendar,
   MessageCircle
 } from "lucide-react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import AllPagesDropdown from "@/components/AllPagesDropdown";
+import BackButton from "@/components/BackButton";
 
-export default function CompanionProfile({ params }: { params: { id: string } }) {
-  const router = useRouter();
+export default async function CompanionProfile({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
   // Mock data - in real app would fetch based on params.id
   const companion = {
@@ -72,16 +71,16 @@ export default function CompanionProfile({ params }: { params: { id: string } })
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/30">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <button 
-              onClick={() => router.push('/')}
+            <Link 
+              href="/"
               className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
             >
               <div className="w-8 h-8 bg-primary rounded-full" />
               <span className="text-lg font-medium text-primary">TryggVän</span>
-            </button>
+            </Link>
             <div className="flex items-center space-x-6">
-              <a href="/" className="text-muted-foreground hover:text-primary">Hem</a>
-              <a href="/companions" className="text-muted-foreground hover:text-primary">Sök</a>
+              <Link href="/" className="text-muted-foreground hover:text-primary">Hem</Link>
+              <Link href="/companions" className="text-muted-foreground hover:text-primary">Sök</Link>
               <AllPagesDropdown />
               <button className="text-muted-foreground hover:text-primary">Konto</button>
             </div>
@@ -93,15 +92,7 @@ export default function CompanionProfile({ params }: { params: { id: string } })
         <div className="container mx-auto max-w-4xl px-4 lg:px-8 py-8">
           {/* Back Button */}
           <div className="mb-6">
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              onClick={() => router.back()}
-              className="p-2 hover:bg-secondary"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Tillbaka till sökresultat
-            </Button>
+            <BackButton>Tillbaka till sökresultat</BackButton>
           </div>
 
           {/* Profile Header */}
@@ -245,13 +236,13 @@ export default function CompanionProfile({ params }: { params: { id: string } })
       <footer className="py-12 px-4 lg:px-8 border-t border-border/30">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <button 
-              onClick={() => router.push('/')}
+            <Link 
+              href="/"
               className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
             >
               <div className="w-8 h-8 bg-primary rounded-full" />
               <span className="text-lg font-medium text-primary">TryggVän</span>
-            </button>
+            </Link>
             <div className="flex gap-8 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">Om oss</a>
               <a href="#" className="hover:text-primary transition-colors">Säkerhet</a>

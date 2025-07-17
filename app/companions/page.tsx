@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
@@ -239,9 +240,9 @@ export default function CompanionsPage() {
               <span className="text-lg font-medium text-primary">TryggVän</span>
             </button>
             <div className="flex items-center space-x-6">
-              <a href="/" className="text-muted-foreground hover:text-primary">Hem</a>
-              <a href="/companions" className="text-primary font-medium">Sök sällskap</a>
-              <a href="/care-seekers" className="text-muted-foreground hover:text-primary">Familjer</a>
+              <Link href="/" className="text-muted-foreground hover:text-primary">Hem</Link>
+              <Link href="/companions" className="text-primary font-medium">Sök sällskap</Link>
+              <Link href="/care-seekers" className="text-muted-foreground hover:text-primary">Familjer</Link>
               <AllPagesDropdown />
               <button 
                 onClick={() => setIsLoginOpen(true)}

@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
@@ -213,9 +214,9 @@ export default function CareSeekersPage() {
               <span className="text-lg font-medium text-primary">TryggVän</span>
             </button>
             <div className="flex items-center space-x-6">
-              <a href="/" className="text-muted-foreground hover:text-primary">Hem</a>
-              <a href="/companions" className="text-muted-foreground hover:text-primary">Sök sällskap</a>
-              <a href="/care-seekers" className="text-primary font-medium">Familjer</a>
+              <Link href="/" className="text-muted-foreground hover:text-primary">Hem</Link>
+              <Link href="/companions" className="text-muted-foreground hover:text-primary">Sök sällskap</Link>
+              <Link href="/care-seekers" className="text-primary font-medium">Familjer</Link>
               <AllPagesDropdown />
               <button className="text-muted-foreground hover:text-primary">Konto</button>
             </div>

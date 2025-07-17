@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
@@ -13,11 +11,12 @@ import {
   Home,
   Users
 } from "lucide-react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import AllPagesDropdown from "@/components/AllPagesDropdown";
+import BackButton from "@/components/BackButton";
 
-export default function CareSeekerProfile({ params }: { params: { id: string } }) {
-  const router = useRouter();
+export default async function CareSeekerProfile({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
   // Mock data - in real app would fetch based on params.id
   const careSeeker = {
@@ -61,17 +60,17 @@ export default function CareSeekerProfile({ params }: { params: { id: string } }
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/30">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <button 
-              onClick={() => router.push('/')}
+            <Link 
+              href="/"
               className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
             >
               <div className="w-8 h-8 bg-primary rounded-full" />
               <span className="text-lg font-medium text-primary">TryggVän</span>
-            </button>
+            </Link>
             <div className="flex items-center space-x-6">
-              <a href="/" className="text-muted-foreground hover:text-primary">Hem</a>
-              <a href="/companions" className="text-muted-foreground hover:text-primary">Sök sällskap</a>
-              <a href="/care-seekers" className="text-primary font-medium">Familjer</a>
+              <Link href="/" className="text-muted-foreground hover:text-primary">Hem</Link>
+              <Link href="/companions" className="text-muted-foreground hover:text-primary">Sök sällskap</Link>
+              <Link href="/care-seekers" className="text-primary font-medium">Familjer</Link>
               <AllPagesDropdown />
               <button className="text-muted-foreground hover:text-primary">Konto</button>
             </div>
@@ -90,15 +89,7 @@ export default function CareSeekerProfile({ params }: { params: { id: string } }
 
           {/* Back Button */}
           <div className="mb-6">
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              onClick={() => router.back()}
-              className="p-2 hover:bg-secondary"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Tillbaka till familjer
-            </Button>
+            <BackButton>Tillbaka till familjer</BackButton>
           </div>
 
           {/* Profile Header */}
@@ -244,10 +235,10 @@ export default function CareSeekerProfile({ params }: { params: { id: string } }
             <h2 className="text-2xl font-light text-primary mb-4">Andra familjer i området</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {similarFamilies.map((family) => (
-                <div 
+                <Link 
                   key={family.id} 
-                  className="bg-card rounded-2xl p-4 border border-border/30 cursor-pointer hover:border-border/50 transition-colors"
-                  onClick={() => router.push(`/care-seekers/${family.id}`)}
+                  href={`/care-seekers/${family.id}`}
+                  className="bg-card rounded-2xl p-4 border border-border/30 cursor-pointer hover:border-border/50 transition-colors block"
                 >
                   <div className="w-full h-24 bg-secondary rounded-xl mb-3 flex items-center justify-center">
                     <User className="h-8 w-8 text-muted-foreground" />
@@ -258,7 +249,7 @@ export default function CareSeekerProfile({ params }: { params: { id: string } }
                     <span className="text-sm text-muted-foreground">{family.timePosted}</span>
                   </div>
                   <p className="text-sm text-muted-foreground mt-1">{family.location}</p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -269,13 +260,13 @@ export default function CareSeekerProfile({ params }: { params: { id: string } }
       <footer className="py-12 px-4 lg:px-8 border-t border-border/30">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <button 
-              onClick={() => router.push('/')}
+            <Link 
+              href="/"
               className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
             >
               <div className="w-8 h-8 bg-primary rounded-full" />
               <span className="text-lg font-medium text-primary">TryggVän</span>
-            </button>
+            </Link>
             <div className="flex gap-8 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">Om oss</a>
               <a href="#" className="hover:text-primary transition-colors">Säkerhet</a>

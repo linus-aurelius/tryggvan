@@ -305,7 +305,7 @@ export default function CreateProfilePage() {
                             ...prev.availability,
                             vardagar: {
                               ...prev.availability.vardagar,
-                              enabled: checked
+                              enabled: checked as boolean
                             }
                           }
                         }));
@@ -333,8 +333,8 @@ export default function CreateProfilePage() {
                                         days: {
                                           ...prev.availability.vardagar.days,
                                           [day]: {
-                                            ...prev.availability.vardagar.days[day],
-                                            enabled: checked
+                                            ...prev.availability.vardagar.days[day as keyof typeof prev.availability.vardagar.days],
+                                            enabled: checked as boolean
                                           }
                                         }
                                       }
@@ -367,7 +367,7 @@ export default function CreateProfilePage() {
                                         days: {
                                           ...prev.availability.vardagar.days,
                                           [day]: {
-                                            ...prev.availability.vardagar.days[day],
+                                            ...prev.availability.vardagar.days[day as keyof typeof prev.availability.vardagar.days],
                                             from: e.target.value
                                           }
                                         }
@@ -391,7 +391,7 @@ export default function CreateProfilePage() {
                                         days: {
                                           ...prev.availability.vardagar.days,
                                           [day]: {
-                                            ...prev.availability.vardagar.days[day],
+                                            ...prev.availability.vardagar.days[day as keyof typeof prev.availability.vardagar.days],
                                             to: e.target.value
                                           }
                                         }
@@ -422,7 +422,7 @@ export default function CreateProfilePage() {
                             ...prev.availability,
                             helger: {
                               ...prev.availability.helger,
-                              enabled: checked
+                              enabled: checked as boolean
                             }
                           }
                         }));
@@ -450,8 +450,8 @@ export default function CreateProfilePage() {
                                         days: {
                                           ...prev.availability.helger.days,
                                           [day]: {
-                                            ...prev.availability.helger.days[day],
-                                            enabled: checked
+                                            ...prev.availability.helger.days[day as keyof typeof prev.availability.helger.days],
+                                            enabled: checked as boolean
                                           }
                                         }
                                       }
@@ -484,7 +484,7 @@ export default function CreateProfilePage() {
                                         days: {
                                           ...prev.availability.helger.days,
                                           [day]: {
-                                            ...prev.availability.helger.days[day],
+                                            ...prev.availability.helger.days[day as keyof typeof prev.availability.helger.days],
                                             from: e.target.value
                                           }
                                         }
@@ -508,7 +508,7 @@ export default function CreateProfilePage() {
                                         days: {
                                           ...prev.availability.helger.days,
                                           [day]: {
-                                            ...prev.availability.helger.days[day],
+                                            ...prev.availability.helger.days[day as keyof typeof prev.availability.helger.days],
                                             to: e.target.value
                                           }
                                         }
@@ -539,7 +539,7 @@ export default function CreateProfilePage() {
                             ...prev.availability,
                             flexibel: {
                               ...prev.availability.flexibel,
-                              enabled: checked
+                              enabled: checked as boolean
                             }
                           }
                         }));
