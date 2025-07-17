@@ -193,7 +193,7 @@ export default function CareSeekersContent() {
           <div className="text-center mb-8">
             <h1 className="text-4xl font-light text-primary mb-4">Familjer som söker sällskap</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Här hittar du familjer i ditt område som söker trygg och omtänksam sällskap för sina nära och kära
+              Bläddra bland familjer i ditt område och kontakta dem direkt för att erbjuda dina tjänster
             </p>
           </div>
 

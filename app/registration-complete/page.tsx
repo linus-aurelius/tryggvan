@@ -45,7 +45,7 @@ export default function RegistrationCompletePage() {
                 Välkommen till TryggVän!
               </h1>
               <p className="text-lg text-muted-foreground max-w-md mx-auto">
-                Ditt konto har skapats och vi börjar genast leta efter passande sällskap
+                Ditt konto har skapats och du kan nu börja hitta passande sällskap
               </p>
             </div>
 
@@ -73,9 +73,9 @@ export default function RegistrationCompletePage() {
                     <Heart className="h-4 w-4 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-medium mb-1">Vi matchar er</h3>
+                    <h3 className="font-medium mb-1">Börja utforska</h3>
                     <p className="text-sm text-muted-foreground">
-                      Baserat på era önskemål letar vi efter passande sällskap i ert område.
+                      Bläddra bland profiler och hitta det sällskap som passar er bäst.
                     </p>
                   </div>
                 </div>
@@ -85,9 +85,9 @@ export default function RegistrationCompletePage() {
                     <Clock className="h-4 w-4 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-medium mb-1">Få förslag inom 24 timmar</h3>
+                    <h3 className="font-medium mb-1">Kontakta direkt</h3>
                     <p className="text-sm text-muted-foreground">
-                      Ni får förslag på lämpliga sällskap via e-post och kan sedan välja vem ni vill träffa.
+                      När ni hittat någon intressant, kontakta dem direkt för att boka en träff.
                     </p>
                   </div>
                 </div>

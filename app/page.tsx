@@ -72,7 +72,7 @@ export default function Home() {
                   Sällskap för dina<br />älskade föräldrar
                 </h1>
                 <p className="text-lg text-muted-foreground">
-                  Ange postnummer och se vilka vårdgivare som finns tillgängliga i området
+                  Ange postnummer och hitta vårdgivare i området - kontakta dem direkt
                 </p>
                 
                 {/* Search Bar */}
@@ -180,9 +180,9 @@ export default function Home() {
                 1
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-medium mb-2">Berätta om era behov</h3>
+                <h3 className="text-xl font-medium mb-2">Skapa er profil</h3>
                 <p className="text-muted-foreground">
-                  Fyll i information om dina föräldrar och vilken typ av sällskap ni söker
+                  Registrera er och berätta om vilken typ av sällskap ni söker
                 </p>
               </div>
             </div>
@@ -192,9 +192,9 @@ export default function Home() {
                 2
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-medium mb-2">Vi matchar er</h3>
+                <h3 className="text-xl font-medium mb-2">Hitta själv</h3>
                 <p className="text-muted-foreground">
-                  Baserat på era önskemål hittar vi passande sällskap i ert område
+                  Bläddra bland profiler och välj det sällskap som passar er bäst
                 </p>
               </div>
             </div>
@@ -204,9 +204,9 @@ export default function Home() {
                 3
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-medium mb-2">Träffas tryggt</h3>
+                <h3 className="text-xl font-medium mb-2">Kontakta direkt</h3>
                 <p className="text-muted-foreground">
-                  Börja med ett första möte och bygg sedan upp en trygg relation
+                  Kontakta sällskapet direkt och arrangera en första träff
                 </p>
               </div>
             </div>

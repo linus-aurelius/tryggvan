@@ -158,7 +158,7 @@ export default function CompanionsContent() {
           <div className="text-center mb-8">
             <h1 className="text-4xl font-light text-primary mb-4">Hitta trygg sällskap</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Upptäck våra verifierade sällskap som är redo att skapa meningsfulla stunder med dina nära och kära
+              Bläddra bland våra verifierade sällskap och välj den person som passar er bäst
             </p>
           </div>
 
